@@ -14,7 +14,7 @@
                 <a href="../index.html">Home</a>
                 <a href="../trending/index.html">Trending</a>
                 <a href="../series/index.html">Series</a>
-                <a href="../movies/index.html">Movies</a>
+                <a class="active" href="../movies/index.html">Movies</a>
                 <a href="../new/index.html">New Releases</a>
             </nav>
         </div>
@@ -22,14 +22,51 @@
 
     <main class="container">
         <section class="hero">
-            <h2>Movies Route</h2>
+            <span class="eyebrow">Movie Catalog Demo Route</span>
+            <h2>Standalone films grouped under the movies path</h2>
             <p class="route-badge">Route: /movies</p>
-            <p>This page represents the <strong>/movies</strong> route in the routing lab. Later, the AWS Application Load Balancer will forward requests for this path to its own target group and EC2 instance.</p>
+            <p>This page represents the <strong>/movies</strong> route in the routing lab. It models film-style content that will later map to <strong>tg-movies</strong>.</p>
         </section>
 
         <section class="info-card">
-            <h3>Route Purpose</h3>
-            <p>This section exists so you can observe how one clean URL path can map to a dedicated backend target in a future AWS deployment.</p>
+            <div class="section-heading">
+                <h3>Movie picks</h3>
+                <span class="chip">Future Target: tg-movies</span>
+            </div>
+            <div class="card-grid">
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">BLACK OUT</span></div>
+                    <div class="meta-row">
+                        <h3>Black Out</h3>
+                        <span class="chip">Action</span>
+                    </div>
+                    <p>A simple placeholder film title that makes the movie route feel more complete.</p>
+                </article>
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">GOLD HORIZON</span></div>
+                    <div class="meta-row">
+                        <h3>Gold Horizon</h3>
+                        <span class="chip">Adventure</span>
+                    </div>
+                    <p>This card represents a route that could later be served by a movie-specific EC2 host.</p>
+                </article>
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">QUIET RUN</span></div>
+                    <div class="meta-row">
+                        <h3>Quiet Run</h3>
+                        <span class="chip">Suspense</span>
+                    </div>
+                    <p>A third card helps show how static route sections can still look structured and intentional.</p>
+                </article>
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">FINAL FRAME</span></div>
+                    <div class="meta-row">
+                        <h3>Final Frame</h3>
+                        <span class="chip">Drama</span>
+                    </div>
+                    <p>The layout remains pure HTML and CSS while still looking like a path-based routing demo.</p>
+                </article>
+            </div>
         </section>
 
         <section class="info-card">
@@ -38,7 +75,7 @@
         </section>
     </main>
 
-    <footer class="container">
+    <footer class="container site-footer">
         <p>Static HTML and CSS only. AWS deployment will be added later.</p>
     </footer>
 </body>

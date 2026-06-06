@@ -11,7 +11,7 @@
         <div class="container">
             <h1 class="brand">Netflix Routing Lab</h1>
             <nav class="nav" aria-label="Main navigation">
-                <a href="index.html">Home</a>
+                <a class="active" href="index.html">Home</a>
                 <a href="trending/index.html">Trending</a>
                 <a href="series/index.html">Series</a>
                 <a href="movies/index.html">Movies</a>
@@ -22,21 +22,113 @@
 
     <main class="container">
         <section class="hero">
-            <h2>Homepage Route</h2>
+            <span class="eyebrow">AWS ALB Routing Lab</span>
+            <h2>Static pages designed to model path-based routing</h2>
             <p class="route-badge">Route: /</p>
-            <p>This page represents the root route of the static learning project. Later, an AWS Application Load Balancer will send requests for <strong>/</strong> to a dedicated target group and EC2 instance.</p>
+            <p>This homepage represents the root route of a simple Netflix-inspired learning site. The frontend stays static so you can focus on how an AWS Application Load Balancer will eventually route each URL path to the right target group and private EC2 instance.</p>
+        </section>
+
+        <section class="info-card routing-flow-section">
+            <div class="section-heading">
+                <h3>How path-based routing will work</h3>
+                <span class="chip">Concept Flow</span>
+            </div>
+            <p>One Application Load Balancer can inspect the requested URL path and forward traffic to the correct backend service for that route.</p>
+            <div class="routing-flow">
+                <article class="flow-step">
+                    <span class="flow-step-number">01</span>
+                    <h3>User Request</h3>
+                    <p>The browser sends a request to a path such as <strong>/movies</strong>.</p>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <article class="flow-step">
+                    <span class="flow-step-number">02</span>
+                    <h3>Application Load Balancer</h3>
+                    <p>The public ALB receives the request and checks the URL path.</p>
+                </article>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <article class="flow-step">
+                    <span class="flow-step-number">03</span>
+                    <h3>Listener Rule</h3>
+                    <p>The ALB matches the path rule, such as <strong>/movies*</strong>.</p>
+                </article>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <article class="flow-step">
+                    <span class="flow-step-number">04</span>
+                    <h3>Target Group</h3>
+                    <p>The request is forwarded to the matching target group, such as <strong>tg-movies</strong>.</p>
+                </article>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <article class="flow-step">
+                    <span class="flow-step-number">05</span>
+                    <h3>Private EC2 Instance</h3>
+                    <p>A private EC2 instance in that target group serves the route content.</p>
+                </article>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <article class="flow-step">
+                    <span class="flow-step-number">06</span>
+                    <h3>Static Page Response</h3>
+                    <p>Nginx returns the correct static HTML page to the user.</p>
+                </article>
+            </div>
+            <div class="routing-example">
+                <p><strong>Example request:</strong></p>
+                <p><code>/movies</code> &rarr; ALB listener rule <code>/movies*</code> &rarr; <code>tg-movies</code> &rarr; Movies EC2 server &rarr; Movies page</p>
+            </div>
         </section>
 
         <section class="info-card">
-            <h3>What this lab demonstrates</h3>
-            <p>Each section of the site is intentionally split into its own route so you can practice path-based routing concepts without backend code.</p>
-            <ul class="route-list">
-                <li><strong>/</strong> is the landing page.</li>
-                <li><strong>/trending</strong> will model a trending content service.</li>
-                <li><strong>/series</strong> will model a series catalog service.</li>
-                <li><strong>/movies</strong> will model a movie catalog service.</li>
-                <li><strong>/new</strong> will model a new releases service.</li>
-            </ul>
+            <div class="section-heading">
+                <h3>Route map</h3>
+                <span class="chip">Five Demo Paths</span>
+            </div>
+            <div class="card-grid route-grid">
+                <article class="route-card">
+                    <div class="meta-row">
+                        <h3>Home</h3>
+                        <span class="route-path">/</span>
+                    </div>
+                    <p>The landing page for the lab and the starting point for local navigation.</p>
+                    <p>Future target group: <strong>tg-home</strong>.</p>
+                    <p><a href="index.html">Open route</a></p>
+                </article>
+                <article class="route-card">
+                    <div class="meta-row">
+                        <h3>Trending</h3>
+                        <span class="route-path">/trending</span>
+                    </div>
+                    <p>This route models high-traffic, popular content with its own future backend target.</p>
+                    <p>Future target group: <strong>tg-trending</strong>.</p>
+                    <p><a href="trending/index.html">Open route</a></p>
+                </article>
+                <article class="route-card">
+                    <div class="meta-row">
+                        <h3>Series</h3>
+                        <span class="route-path">/series</span>
+                    </div>
+                    <p>This route models episodic catalog content and a separate series-focused target group.</p>
+                    <p>Future target group: <strong>tg-series</strong>.</p>
+                    <p><a href="series/index.html">Open route</a></p>
+                </article>
+                <article class="route-card">
+                    <div class="meta-row">
+                        <h3>Movies</h3>
+                        <span class="route-path">/movies</span>
+                    </div>
+                    <p>This route models movie catalog traffic that can be isolated with its own listener rule.</p>
+                    <p>Future target group: <strong>tg-movies</strong>.</p>
+                    <p><a href="movies/index.html">Open route</a></p>
+                </article>
+                <article class="route-card">
+                    <div class="meta-row">
+                        <h3>New Releases</h3>
+                        <span class="route-path">/new</span>
+                    </div>
+                    <p>This route models recently added content that will later map to a dedicated backend.</p>
+                    <p>Future target group: <strong>tg-new</strong>.</p>
+                    <p><a href="new/index.html">Open route</a></p>
+                </article>
+            </div>
         </section>
 
         <section class="info-card">
@@ -45,8 +137,11 @@
         </section>
     </main>
 
-    <footer class="container">
+    <footer class="container site-footer">
         <p>Static HTML and CSS only. AWS deployment will be added later.</p>
     </footer>
 </body>
 </html>
+
+
+
