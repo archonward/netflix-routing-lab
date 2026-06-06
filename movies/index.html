@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies | Netflix Routing Lab</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="brand">Netflix Routing Lab</h1>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="../index.html">Home</a>
+                <a href="../trending/index.html">Trending</a>
+                <a href="../series/index.html">Series</a>
+                <a href="../movies/index.html">Movies</a>
+                <a href="../new/index.html">New Releases</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Movies Route</h2>
+            <p class="route-badge">Route: /movies</p>
+            <p>This page represents the <strong>/movies</strong> route in the routing lab. Later, the AWS Application Load Balancer will forward requests for this path to its own target group and EC2 instance.</p>
+        </section>
+
+        <section class="info-card">
+            <h3>Route Purpose</h3>
+            <p>This section exists so you can observe how one clean URL path can map to a dedicated backend target in a future AWS deployment.</p>
+        </section>
+
+        <section class="info-card">
+            <h3>Infrastructure Note</h3>
+            <p>This page will eventually be served by its own EC2 instance behind an AWS Application Load Balancer target group.</p>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>Static HTML and CSS only. AWS deployment will be added later.</p>
+    </footer>
+</body>
+</html>

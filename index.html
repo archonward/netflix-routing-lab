@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Routing Lab</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="brand">Netflix Routing Lab</h1>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="trending/index.html">Trending</a>
+                <a href="series/index.html">Series</a>
+                <a href="movies/index.html">Movies</a>
+                <a href="new/index.html">New Releases</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Homepage Route</h2>
+            <p class="route-badge">Route: /</p>
+            <p>This page represents the root route of the static learning project. Later, an AWS Application Load Balancer will send requests for <strong>/</strong> to a dedicated target group and EC2 instance.</p>
+        </section>
+
+        <section class="info-card">
+            <h3>What this lab demonstrates</h3>
+            <p>Each section of the site is intentionally split into its own route so you can practice path-based routing concepts without backend code.</p>
+            <ul class="route-list">
+                <li><strong>/</strong> is the landing page.</li>
+                <li><strong>/trending</strong> will model a trending content service.</li>
+                <li><strong>/series</strong> will model a series catalog service.</li>
+                <li><strong>/movies</strong> will model a movie catalog service.</li>
+                <li><strong>/new</strong> will model a new releases service.</li>
+            </ul>
+        </section>
+
+        <section class="info-card">
+            <h3>Infrastructure Note</h3>
+            <p>This page will eventually be served by its own EC2 instance behind an AWS Application Load Balancer target group.</p>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>Static HTML and CSS only. AWS deployment will be added later.</p>
+    </footer>
+</body>
+</html>
