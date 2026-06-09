@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies | Netflix Routing Lab</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="brand">Netflix Routing Lab</h1>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="/">Home</a>
+                <a href="/trending">Trending</a>
+                <a href="/series">Series</a>
+                <a class="active" href="/movies">Movies</a>
+                <a href="/new">New Releases</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <span class="eyebrow">Movie Catalog Demo Route</span>
+            <h2>Standalone films grouped under the movies path</h2>
+            <p class="route-badge">Route: /movies</p>
+            <p>This page represents the <strong>/movies</strong> route in the routing lab. It models film-style content that will later map to <strong>tg-movies</strong>.</p>
+        </section>
+
+        <section class="info-card">
+            <div class="section-heading">
+                <h3>Movie picks</h3>
+                <span class="chip">Future Target: tg-movies</span>
+            </div>
+            <div class="card-grid">
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">BLACK OUT</span></div>
+                    <div class="meta-row">
+                        <h3>Black Out</h3>
+                        <span class="chip">Action</span>
+                    </div>
+                    <p>A simple placeholder film title that makes the movie route feel more complete.</p>
+                </article>
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">GOLD HORIZON</span></div>
+                    <div class="meta-row">
+                        <h3>Gold Horizon</h3>
+                        <span class="chip">Adventure</span>
+                    </div>
+                    <p>This card represents a route that could later be served by a movie-specific EC2 host.</p>
+                </article>
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">QUIET RUN</span></div>
+                    <div class="meta-row">
+                        <h3>Quiet Run</h3>
+                        <span class="chip">Suspense</span>
+                    </div>
+                    <p>A third card helps show how static route sections can still look structured and intentional.</p>
+                </article>
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">FINAL FRAME</span></div>
+                    <div class="meta-row">
+                        <h3>Final Frame</h3>
+                        <span class="chip">Drama</span>
+                    </div>
+                    <p>The layout remains pure HTML and CSS while still looking like a path-based routing demo.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="info-card">
+            <h3>Infrastructure Note</h3>
+            <p>This page will eventually be served by its own EC2 instance behind an AWS Application Load Balancer target group.</p>
+        </section>
+    </main>
+
+    <footer class="container site-footer">
+        <p>Static HTML and CSS only. AWS deployment will be added later.</p>
+    </footer>
+</body>
+</html>
+

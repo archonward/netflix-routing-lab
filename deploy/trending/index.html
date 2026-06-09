@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending | Netflix Routing Lab</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="brand">Netflix Routing Lab</h1>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="/">Home</a>
+                <a class="active" href="/trending">Trending</a>
+                <a href="/series">Series</a>
+                <a href="/movies">Movies</a>
+                <a href="/new">New Releases</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <span class="eyebrow">High Traffic Demo Route</span>
+            <h2>Trending content that simulates a busy path</h2>
+            <p class="route-badge">Route: /trending</p>
+            <p>This page represents the <strong>/trending</strong> route in the routing lab. It models popular content that could receive frequent requests and later map to <strong>tg-trending</strong>.</p>
+        </section>
+
+        <section class="info-card">
+            <div class="section-heading">
+                <h3>Popular right now</h3>
+                <span class="chip">Future Target: tg-trending</span>
+            </div>
+            <div class="card-grid">
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">RED LINE</span></div>
+                    <div class="meta-row">
+                        <h3>Red Line</h3>
+                        <span class="chip">Top 10</span>
+                    </div>
+                    <p>A fast-moving headline title used to represent content with high viewer demand.</p>
+                </article>
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">CITY SIGNAL</span></div>
+                    <div class="meta-row">
+                        <h3>City Signal</h3>
+                        <span class="chip">Popular</span>
+                    </div>
+                    <p>A trending card that helps show how one route can front a distinct content section.</p>
+                </article>
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">FLASH POINT</span></div>
+                    <div class="meta-row">
+                        <h3>Flash Point</h3>
+                        <span class="chip">Peak Traffic</span>
+                    </div>
+                    <p>This placeholder title represents content that may justify its own target group.</p>
+                </article>
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">MIDNIGHT WAVE</span></div>
+                    <div class="meta-row">
+                        <h3>Midnight Wave</h3>
+                        <span class="chip">Viewer Pick</span>
+                    </div>
+                    <p>A fourth card rounds out the grid and keeps the page visually closer to a real demo.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="info-card">
+            <h3>Infrastructure Note</h3>
+            <p>This page will eventually be served by its own EC2 instance behind an AWS Application Load Balancer target group.</p>
+        </section>
+    </main>
+
+    <footer class="container site-footer">
+        <p>Static HTML and CSS only. AWS deployment will be added later.</p>
+    </footer>
+</body>
+</html>
+

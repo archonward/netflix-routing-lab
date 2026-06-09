@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Releases | Netflix Routing Lab</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="brand">Netflix Routing Lab</h1>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="/">Home</a>
+                <a href="/trending">Trending</a>
+                <a href="/series">Series</a>
+                <a href="/movies">Movies</a>
+                <a class="active" href="/new">New Releases</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <span class="eyebrow">Recent Additions Demo Route</span>
+            <h2>Fresh content grouped under the new releases path</h2>
+            <p class="route-badge">Route: /new</p>
+            <p>This page represents the <strong>/new</strong> route in the routing lab. It models recently added content that will later map to <strong>tg-new</strong>.</p>
+        </section>
+
+        <section class="info-card">
+            <div class="section-heading">
+                <h3>Recently added</h3>
+                <span class="chip">Future Target: tg-new</span>
+            </div>
+            <div class="card-grid">
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">FIRST DROP</span></div>
+                    <div class="meta-row">
+                        <h3>First Drop</h3>
+                        <span class="chip">Just Added</span>
+                    </div>
+                    <p>A new release placeholder used to represent recently published content.</p>
+                </article>
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">OPEN WINDOW</span></div>
+                    <div class="meta-row">
+                        <h3>Open Window</h3>
+                        <span class="chip">Fresh Pick</span>
+                    </div>
+                    <p>This card helps explain how a new releases route can map to a separate target group.</p>
+                </article>
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">DAY ZERO</span></div>
+                    <div class="meta-row">
+                        <h3>Day Zero</h3>
+                        <span class="chip">Launch Week</span>
+                    </div>
+                    <p>The content stays static, but the route is ready to become part of a fuller ALB exercise.</p>
+                </article>
+                <article class="content-card">
+                    <div class="poster"><span class="poster-label">NEW SIGNAL</span></div>
+                    <div class="meta-row">
+                        <h3>New Signal</h3>
+                        <span class="chip">Recently Added</span>
+                    </div>
+                    <p>This last card rounds out the grid and keeps the page aligned with the rest of the site.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="info-card">
+            <h3>Infrastructure Note</h3>
+            <p>This page will eventually be served by its own EC2 instance behind an AWS Application Load Balancer target group.</p>
+        </section>
+    </main>
+
+    <footer class="container site-footer">
+        <p>Static HTML and CSS only. AWS deployment will be added later.</p>
+    </footer>
+</body>
+</html>
+

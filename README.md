@@ -28,3 +28,31 @@ Each target group is expected to point to its own EC2 instance in a later phase 
 This repository currently contains only static HTML and CSS pages for local learning and browser testing.
 
 AWS deployment, load balancer configuration, target groups, and EC2 setup will be added later.
+
+## Deployment folder structure
+The deploy/ directory contains per-route deployment copies of the static site for future Nginx-based EC2 instances. Each folder is prepared so a single server can host its own page independently while still using application paths like /movies and /series.
+
+## Local deploy package test
+Each folder under `deploy/` is meant to behave like the web root of one future EC2 instance running Nginx.
+
+Example:
+
+```powershell
+cd deploy/movies
+python -m http.server 8080
+```
+
+Then open:
+
+```text
+http://localhost:8080
+```
+
+This simulates the Movies EC2 server serving its own static page.
+
+Expected behavior:
+- The Movies page should load correctly.
+- The CSS in `deploy/movies/assets/styles.css` should load correctly.
+- Links like `/series` or `/trending` may not work in this single-folder local test because only the Movies deploy package is being served.
+- Those links are expected to work later when the AWS Application Load Balancer routes each path to the correct EC2 server.
+
